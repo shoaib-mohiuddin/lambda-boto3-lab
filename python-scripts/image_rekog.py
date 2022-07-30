@@ -27,6 +27,10 @@ def lambda_handler(event, context):
 
     male_face = 0
     female_face = 0
+    beard = 0
+    mustache = 0
+    eyeglass = 0
+    sunglass = 0
 
     for face in faces:
         if face["Gender"]["Value"] == "Male":
@@ -34,23 +38,15 @@ def lambda_handler(event, context):
         elif face["Gender"]["Value"] == "Female":
             female_face += 1
     
-    beard = 0
-    for face in faces:
         if face["Beard"]["Value"] == True:
             beard += 1
     
-    mustache = 0
-    for face in faces:
         if face["Mustache"]["Value"] == True:
             mustache += 1
     
-    eyeglass = 0
-    for face in faces:
         if face["Eyeglasses"]["Value"] == True:
             eyeglass += 1
     
-    sunglass = 0
-    for face in faces:
         if face["Sunglasses"]["Value"] == True:
             sunglass += 1
     
